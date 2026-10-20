@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Features, Functions } from "../components/features.jsx";
 import MathBackground from "../components/mathbackground.jsx";
 
@@ -10,13 +11,15 @@ function Landing() {
   return (
     <div className="mathwhiz-page">
       <MathBackground />
+
       <header>
         <h1>MathWhiz</h1>
         <p>Explore. Visualize. Understand.</p>
       </header>
 
       <main>
-        <img src={meme} alt="MathWhiz mathematics meme" className="hero-meme" />{" "}
+        <img src={meme} alt="MathWhiz mathematics meme" className="hero-meme" />
+
         <section id="hero">
           <h1>Stop memorizing. Start exploring.</h1>
 
@@ -31,36 +34,41 @@ function Landing() {
             experimentation.
           </p>
 
-          <button onClick="#">Start Visualizing</button>
+          <Link to="/explorer" className="primary-button">
+            Start Visualizing
+          </Link>
         </section>
+
         <section id="features">
           <Features title="Visualize" descr="See equations come to life." />
-
           <Features title="Experiment" descr="Change parameters and explore." />
-
           <Features title="Save" descr="Keep your explorations." />
         </section>
+
         <section id="func-families">
           <h2>Explore Function Families</h2>
 
-          <Functions
-            src={quadratic}
-            title="Quadratic Functions"
-            descr="Explore parabolas and how coefficients affect their shape."
-          />
+          <div className="function-family-grid">
+            <Functions
+              src={quadratic}
+              title="Quadratic Functions"
+              descr="Explore parabolas and how coefficients affect their shape."
+            />
 
-          <Functions
-            src={cubic}
-            title="Cubic Functions"
-            descr="Investigate curves, turning points, and shape."
-          />
+            <Functions
+              src={cubic}
+              title="Cubic Functions"
+              descr="Investigate curves, turning points, and shape."
+            />
 
-          <Functions
-            src={exponential}
-            title="Exponential Functions"
-            descr="Understand exponential growth and decay visually."
-          />
-          <h3>many others coming soon...</h3>
+            <Functions
+              src={exponential}
+              title="Exponential Functions"
+              descr="Understand exponential growth and decay visually."
+            />
+          </div>
+
+          <h3>Many others coming soon...</h3>
         </section>
       </main>
 
